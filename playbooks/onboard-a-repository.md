@@ -8,9 +8,10 @@
 3. Write Part C: `/speckit.constitution This is payments-service, Java 21 … Add 3–6 PAY-* rules.`
 4. Copy `../speckit-platform/templates/repo/` files (`AGENTS.md`, `CLAUDE.md`, `.github/…`,
    `CODEOWNERS`) and adapt them. Fill `AGENTS.md → Commands` with real commands.
-5. CI: `.github/workflows/sdd.yml` (set `repo-kind`) plus the repo's own build/test workflow.
-6. Branch protection on `main`: required checks `sdd / sdd-gates`, `contracts / contract-check`
-   (if it owns or vendors contracts), repo CI; 1 CODEOWNERS approval.
+5. CI: `.github/workflows/sdd.yml` (set `repo-kind`; keep its `permissions:` block) plus the
+   repo's own build/test workflow.
+6. Branch protection: add the repository and its required checks to
+   `speckit-platform/bootstrap/protect-branches.sh` (PR), then re-run the script.
 7. Register it:
    - `speckit-platform/consumers.json` (governance sync PRs),
    - `product-specs/workspace/repositories.yml` and `relm.code-workspace`,

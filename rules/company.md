@@ -55,8 +55,10 @@ CODEOWNERS.
 - **Small PRs:** one phase or one user story per PR; ≤ ~400 changed lines excluding generated code.
 - **Commit messages:** Conventional Commits (`feat(orders): …`), set via the git extension's
   `commit_style: conventional`.
-- **Branch protection on `main`** in every repo: required checks `sdd / sdd-gates`, repo CI,
-  `contracts / contract-check` where contracts exist; one CODEOWNERS approval; linear history.
+- **Branch protection on `main`** in every repo (ruleset `relm-protect-main`, created by
+  `speckit-platform/bootstrap/protect-branches.sh`): changes only through PRs, one CODEOWNER
+  approval, required checks `sdd / sdd-gates`, repo CI, and `contracts / contract-check` where
+  contracts exist; no force-push. See [Set up the organization](../playbooks/set-up-the-organization.md).
 - **Default to the lightest lane** that is honest about the change ([Work lanes](../docs/03-work-lanes.md)).
 - **Write it down once.** If you explain the same thing to an agent twice, it belongs in
   `AGENTS.md`; if you explain it to a human twice, it belongs in this handbook.

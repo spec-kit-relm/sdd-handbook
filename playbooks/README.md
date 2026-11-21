@@ -11,3 +11,4 @@ Step-by-step procedures with exact commands. Start with the one that matches you
 | [amend-the-constitution.md](amend-the-constitution.md) | Changing a company, team or repository rule |
 | [onboard-a-repository.md](onboard-a-repository.md) | Adding a new service or app to the organization |
 | [onboard-an-engineer.md](onboard-an-engineer.md) | Someone's first day |
+| [set-up-the-organization.md](set-up-the-organization.md) | Org owner: tags, teams, labels, project, branch protection, sync token |

@@ -67,6 +67,7 @@ flowchart LR
 | "The agent ignores our conventions" | [Agent instructions](docs/08-agent-instructions.md) |
 | "I want to change a rule" | [Playbook: amend the constitution](playbooks/amend-the-constitution.md) |
 | "We're adding a new service" | [Playbook: onboard a repository](playbooks/onboard-a-repository.md) |
+| "I'm the org owner — what must be configured?" | [Playbook: set up the organization](playbooks/set-up-the-organization.md) |
 | "What does QA do before code exists?" | [Quality engineering](docs/06-quality-engineering.md) |
 
 ## Official Spec Kit vs. Relm conventions
