@@ -32,7 +32,7 @@ Every Given/When/Then line in a spec is addressable: `RELM-<n>/US<k>/AS<m>` (sto
 in the order written). Every automated test that verifies a scenario starts its title with the ID:
 
 ```ts
-test('RELM-1/US1/AS1 reserving available stock shows a 15-minute hold', async ({ page }) => { … });
+test('RELM-2/US1/AS1 reserving available stock shows a 15-minute hold', async ({ page }) => { … });
 ```
 
 `e2e-tests` runs a `scenario-coverage` job that lists every scenario ID in the product specs and

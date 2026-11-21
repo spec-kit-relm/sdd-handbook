@@ -1,7 +1,7 @@
 # Playbook: a cross-repository feature, end to end
 
-The worked example in this organization is **RELM-1 — Stock reservation at checkout**
-(`product-specs#1`). It touches `inventory-service` (provider), `orders-service`
+The worked example in this organization is **RELM-2 — Stock reservation at checkout**
+(`product-specs#2`). It touches `inventory-service` (provider), `orders-service`
 (consumer + provider), `web-storefront` (consumer) and `e2e-tests` (verification). The repositories
 contain every artifact up to **Gate 3**; implementation has deliberately not started, so you can
 run `/speckit.implement` yourself and watch the guardrails work.
@@ -22,18 +22,19 @@ code product-specs/workspace/relm.code-workspace   # optional multi-root view
 ## 1. Intake — PO (10 min)
 
 1. `product-specs` → **New issue → Product feature**. Title: *Reserve stock at checkout*. It
-   becomes `#1` → Feature ID **RELM-1**.
+   becomes `#2` → Feature ID **RELM-2** (in this org `#1` was taken by an early pull request —
+   issues and PRs share one number sequence).
 2. Add it to the **Product Delivery** project, `Phase = Spec`, lane cross-repo.
 
 ## 2. Product spec — PO + QA spec partner, in `product-specs` (½–1 day)
 
 ```text
 cd ~/relm/product-specs
-/speckit.specify RELM-1 stock-reservation: Shoppers sometimes pay for items that sold out while they
+/speckit.specify RELM-2 stock-reservation: Shoppers sometimes pay for items that sold out while they
 were checking out. When checkout starts, hold the items for a limited time so they cannot be sold to
 someone else, show the shopper how long the hold lasts, and release holds that are not used.
 ```
-→ branch `001-stock-reservation`, `specs/001-stock-reservation/spec.md`.
+→ branch `002-stock-reservation`, `specs/002-stock-reservation/spec.md`.
 
 ```text
 /speckit.clarify                     # PO answers, QA challenges every answer
@@ -52,15 +53,15 @@ checklist items by hand. Merge → `**Status**: Approved`. Assign feature owners
 
 ```text
 cd ~/relm/inventory-service
-/speckit.relm.handoff RELM-1         # prints this repo's slice + the specify command
-/speckit.specify RELM-1 stock-reservation: <slice from the handoff brief>
+/speckit.relm.handoff RELM-2         # prints this repo's slice + the specify command
+/speckit.specify RELM-2 stock-reservation: <slice from the handoff brief>
 /speckit.clarify
-/speckit.plan                        # drafts specs/001-stock-reservation/contracts/*.yaml
+/speckit.plan                        # drafts specs/002-stock-reservation/contracts/*.yaml
 ```
 
 Promote the draft to `contracts/inventory-api.yaml` (v1.0.0 → **1.1.0**, additive) and
 `contracts/inventory-events.yaml` (→ **1.1.0**). Open a **contract PR** on branch
-`001-stock-reservation-contract`, label `contract-change`, reviewers: orders + web feature owners.
+`002-stock-reservation-contract`, label `contract-change`, reviewers: orders + web feature owners.
 
 **orders-service** does the same for `orders-api` (1.2.0 → **1.3.0**: optional `reservationId`,
 new problem type `reservation-expired`) — after inventory's contract is approved, because it
@@ -82,12 +83,12 @@ Consumers now run their own `handoff → specify → clarify → plan` against l
 ```text
 /speckit.tasks                       # tests mandatory, scenario IDs, Phase R at the end
 /speckit.analyze                     # fix spec/plan/tasks until 0 CRITICAL
-/speckit.github.taskstoissues        # issues in this repo; then link as sub-issues of product-specs#1
+/speckit.github.taskstoissues        # issues in this repo; then link as sub-issues of product-specs#2
 ```
 
 ```bash
 # link generated issues to the feature (example)
-for i in $(gh issue list --label task --search "RELM-1" --json number -q '.[].number'); do
+for i in $(gh issue list --label task --search "RELM-2" --json number -q '.[].number'); do
   gh issue edit "$i" --add-project "Product Delivery"
 done
 ```
@@ -107,7 +108,7 @@ Open the **plan PR** (`plan.md`, `tasks.md`, `research.md`, `data-model.md`, `qu
 /speckit.relm.pr                     # assembles the PR description with evidence
 ```
 
-PR rules: `lane:feature`, `Feature: RELM-1`, analyze + converge evidence (checked by `pr-check`),
+PR rules: `lane:feature`, `Feature: RELM-2`, analyze + converge evidence (checked by `pr-check`),
 one CODEOWNERS approval. Work proceeds in parallel: FE against mocks generated from
 `orders-api@1.3.0` and `inventory-api@1.1.0`, BE against its own contract.
 
@@ -115,10 +116,10 @@ one CODEOWNERS approval. Work proceeds in parallel: FE against mocks generated f
 
 ```text
 cd ~/relm/e2e-tests
-/speckit.implement Phase 3           # E2E scenarios RELM-1/US1/AS1… against the lock file versions
+/speckit.implement Phase 3           # E2E scenarios RELM-2/US1/AS1… against the lock file versions
 ```
 
-Run `@smoke` + `@relm-1` in staging. **Gate 4** on `product-specs#1` (QA):
+Run `@smoke` + `@relm-2` in staging. **Gate 4** on `product-specs#2` (QA):
 
 - [ ] inventory-service, orders-service, web-storefront, e2e-tests: `/speckit.converge` Converged
 - [ ] provider verification + consumer contract tests green for the locked versions
@@ -135,9 +136,9 @@ enable 5 % → 50 % → 100 %. Rollback: flag off, then web, orders, inventory. 
 
 Behavior changed during implementation? The PR that changed it links a `product-specs` PR
 (Phase R, TR05). New ideas ("extend holds for logged-in users") → new Feature issue `RELM-m`
-"Extends RELM-1".
+"Extends RELM-2".
 
-## Time budget for RELM-1 (reference)
+## Time budget for RELM-2 (reference)
 
 | Step | Who | Effort |
 |------|-----|--------|
