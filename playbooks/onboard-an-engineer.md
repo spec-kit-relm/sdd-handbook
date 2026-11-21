@@ -13,7 +13,7 @@
 5. In one repo, run the gates locally:
    ```bash
    python ../speckit-platform/scripts/relm_sdd.py agent-files-check
-   python ../speckit-platform/scripts/relm_sdd.py constitution-check --governance ../speckit-platform/governance
+   python ../speckit-platform/scripts/relm_sdd.py constitution-check --platform ../speckit-platform
    python ../speckit-platform/scripts/relm_sdd.py spec-lint
    ```
 

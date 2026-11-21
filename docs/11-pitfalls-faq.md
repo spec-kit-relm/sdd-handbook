@@ -12,7 +12,7 @@
 | **Merge conflicts in shared files** | Constitution, registry, central tasks | Per-repo tasks; constitution edits only on `governance/*` branches; registry edited only by the tech lead |
 | **Spec drift** | Product spec no longer matches production | Phase R TR05, PR checkbox, quarterly audit |
 | **Moving target** | Spec Kit renames/moves commands between versions | Pinned CLI (`SPECKIT_VERSION`), smoke test in platform CI, read the upgrade guide before bumping |
-| **Unvetted community extensions** | Supply-chain risk | Community catalogs are discovery-only; anything we use is reviewed and re-hosted in the Relm catalog |
+| **Unvetted community extensions** | Supply-chain risk | Anything we use is reviewed by the SDD Guild and copied into `speckit-platform` |
 | **Unreliable blog posts** | Advice for features Spec Kit doesn't have (e.g. "native two-level constitutions") | Trust the official docs and this handbook's "official vs. convention" notes |
 
 ## FAQ

@@ -12,7 +12,7 @@
 6. Branch protection on `main`: required checks `sdd / sdd-gates`, `contracts / contract-check`
    (if it owns or vendors contracts), repo CI; 1 CODEOWNERS approval.
 7. Register it:
-   - `speckit-platform/governance/consumers.json` (governance sync PRs),
+   - `speckit-platform/consumers.json` (governance sync PRs),
    - `product-specs/workspace/repositories.yml` and `relm.code-workspace`,
    - `product-specs/contracts/REGISTRY.md` for every interface it owns or consumes.
 8. Verify: `relm_sdd.py agent-files-check`, `constitution-check`, `spec-lint` all pass.

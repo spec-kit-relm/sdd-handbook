@@ -24,8 +24,8 @@ composes one constitution per repository from three parts:
 
 | Part | Content | Source of truth | Changes via |
 |------|---------|-----------------|-------------|
-| A | Principles for everyone: spec before code, contract-first, tests prove the spec, security, observability, safe delivery, simplicity, humans own AI output | `speckit-platform/governance/org-baseline.md` | Governance PR in speckit-platform → sync PR |
-| B | Team-wide technology-neutral rules (API style, idempotency, UI states, accessibility, scenario IDs…) | `speckit-platform/governance/overlays/<team>.md` | Same |
+| A | Principles for everyone: spec before code, contract-first, tests prove the spec, security, observability, safe delivery, simplicity, humans own AI output | `speckit-platform/presets/relm-org/templates/constitution-template.md` | Governance PR in speckit-platform → sync PR |
+| B | Team-wide technology-neutral rules (API style, idempotency, UI states, accessibility, scenario IDs…) | `speckit-platform/presets/relm-<team>/templates/constitution-template.md` | Same |
 | C | Stack, layout, domain invariants, owned interfaces, exceptions | the repository | `lane:governance` PR in the repo |
 
 **Precedence:** A > B > C. Lower parts may add or tighten, never relax. If an agent detects a
@@ -38,12 +38,11 @@ conflict it must stop and report it (stated in Part A's governance section).
    skeleton (priority 10, append). `specify preset resolve constitution-template` shows the chain.
 2. `bootstrap/init-repo.sh` seeds a new repo's constitution from the composed template; the
    feature owner runs `/speckit.constitution` to write Part C.
-3. Released versions of every block are snapshotted in `governance/history/`.
-4. On release, `propagate-governance.yml` opens a sync PR in every consumer repository that
-   replaces Parts A/B (`relm_sdd.py constitution-sync`) and refreshes the presets.
-5. `sdd-gates / constitution-check` runs on every PR and every push to `main`:
-   - Parts A/B must be byte-identical to the released snapshot of the version they declare
-     (local edits fail);
+3. When a platform version is tagged, `propagate-governance.yml` opens a sync PR in every
+   consumer repository that replaces Parts A/B (`relm_sdd.py constitution-sync`) and refreshes the presets.
+4. `sdd-gates / constitution-check` runs on every PR and every push to `main`:
+   - Parts A/B at the current version must have exactly the rules in speckit-platform at the
+     pinned tag (local edits fail);
    - a repo on a different MAJOR, or more than one MINOR behind, fails;
    - one MINOR behind or a missing PATCH only warns;
    - template placeholders and a missing Part C fail.

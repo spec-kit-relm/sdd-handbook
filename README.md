@@ -35,7 +35,7 @@ Then keep these at hand: [IDs, branches & traceability](docs/04-ids-branches-tra
 spec-kit-relm/
 ├── .github              org profile, default issue/PR templates, workflow templates
 ├── sdd-handbook         ← you are here: process, rules, playbooks (humans read this)
-├── speckit-platform     governance source, Spec Kit presets/extension/bundles, CI gates (machines run this)
+├── speckit-platform     Spec Kit presets (= the rules), relm extension, CI gates (machines run this)
 ├── product-specs        product-level specs, impact maps, contract registry   (Spec Kit project, kind=product)
 ├── orders-service       Orders API — Java/Spring Boot                        (Spec Kit project, kind=backend)
 ├── inventory-service    Inventory API + events — Go                          (Spec Kit project, kind=backend)
@@ -75,7 +75,7 @@ This handbook is explicit about the difference, because Spec Kit changes quickly
 
 - **Official Spec Kit (v1.4.3, pinned):** directory-scoped projects; the core commands
   (`constitution`, `specify`, `clarify`, `checklist`, `plan`, `tasks`, `analyze`, `implement`,
-  `converge`); presets, extensions, bundles and private catalogs; the bundled `git` and `github`
+  `converge`); presets and extensions; the bundled `git` and `github`
   extensions; the [Contract-Driven Development guide](https://github.github.io/spec-kit/) for
   multi-repo products.
 - **Relm conventions (this handbook + `speckit-platform`):** the `product-specs` hub repository,
@@ -87,5 +87,5 @@ This handbook is explicit about the difference, because Spec Kit changes quickly
 
 Handbook changes go through a normal PR with label `lane:chore` (wording) or `lane:governance`
 (anything that changes a rule). Rules themselves live in
-[`speckit-platform/governance`](https://github.com/spec-kit-relm/speckit-platform/tree/main/governance)
+the Relm presets in [`speckit-platform`](https://github.com/spec-kit-relm/speckit-platform/blob/main/governance/README.md)
 — see [Amend the constitution](playbooks/amend-the-constitution.md).

@@ -6,8 +6,9 @@ Relm is AI-native: agents are expected to do most first drafts. This policy keep
 - Coding agents with a Spec Kit integration configured by `bootstrap/init-repo.sh` (default: Claude
   Code; Copilot reads the same `AGENTS.md`). Other agents may be added via
   `specify integration install` after SDD Guild review.
-- Only Spec Kit presets/extensions from the **Relm catalog** may be installed. Community catalogs are
-  discovery-only; vetting = code review by the SDD Guild + re-hosting in `speckit-platform`.
+- Only Spec Kit presets/extensions from `speckit-platform` (plus Spec Kit's bundled ones) may be
+  installed. Anything from a community catalog must first be reviewed by the SDD Guild and copied
+  into `speckit-platform`.
 
 ## What may go into a prompt
 | Allowed | Not allowed |

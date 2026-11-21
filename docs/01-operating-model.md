@@ -54,7 +54,7 @@ implementation repository.
 | Pinned consumer copies | the consumer repo, `contracts/vendor/` (read-only) | Consumers build and test against an exact version |
 | Repository slice spec, `plan.md`, `tasks.md`, research, data model, quickstart | each repo, `specs/NNN-name/` | Reviewed with the code; context-sized for the agent |
 | Constitution (Parts A, B, C) | each repo, `.specify/memory/constitution.md` | Every Spec Kit command reads the local constitution |
-| Canonical org/team rules | `speckit-platform/governance/` | Versioned once, synced everywhere |
+| Canonical org/team rules | `speckit-platform/presets/relm-*/templates/constitution-template.md` | Versioned once, synced everywhere |
 | Templates & command wrappers | `speckit-platform/presets/`, installed into `.specify/presets/` | Same artifact shape in every repo |
 | How-to-work instructions | each repo, `AGENTS.md` (+ `CLAUDE.md`, Copilot file) | Read by every coding agent |
 | Process & rationale | `sdd-handbook` | For humans |

@@ -15,7 +15,6 @@
 | **Constitution** | `.specify/memory/constitution.md`: Part A (org), Part B (team), Part C (repo). |
 | **Preset** | Spec Kit package of template/command overrides that compose at runtime (replace/append/prepend/wrap). |
 | **Extension** | Spec Kit package that adds commands/hooks (`relm`, `git`, `github`). |
-| **Bundle / catalog** | Versioned distribution unit / index of installable presets and extensions. |
 | **Phase R** | Mandatory last phase in every `tasks.md`: verification & handoff. |
 | **Gate 1–4** | Spec review, contracts locked, plan review, release readiness. |
 | **Lane** | How much process a change needs: feature, bugfix, chore, governance. |

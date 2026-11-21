@@ -5,8 +5,8 @@ reasoning) and a **machine-readable, condensed MUST layer** in each repository's
 
 | Level | Policy (why + how to comply) | Constitution layer (what MUST hold) | Canonical source | Changed by |
 |-------|------------------------------|-------------------------------------|------------------|-----------|
-| **Company** | [company.md](company.md), [ai-usage-policy.md](ai-usage-policy.md) | Part A `RELM:ORG-BASELINE` — ORG-1 … ORG-9 | [`speckit-platform/governance/org-baseline.md`](https://github.com/spec-kit-relm/speckit-platform/blob/main/governance/org-baseline.md) | SDD Guild + 1 approver per discipline |
-| **Team** | [teams/backend.md](teams/backend.md), [teams/frontend.md](teams/frontend.md), [teams/qa.md](teams/qa.md), [teams/product-architecture.md](teams/product-architecture.md) | Part B `RELM:TEAM-<TEAM>` — BE-*, FE-*, QA-*, PRD-* | [`speckit-platform/governance/overlays/`](https://github.com/spec-kit-relm/speckit-platform/tree/main/governance/overlays) | SDD Guild + the team |
+| **Company** | [company.md](company.md), [ai-usage-policy.md](ai-usage-policy.md) | Part A `RELM:ORG-BASELINE` — ORG-1 … ORG-9 | [`presets/relm-org/…/constitution-template.md`](https://github.com/spec-kit-relm/speckit-platform/blob/main/presets/relm-org/templates/constitution-template.md) | SDD Guild + 1 approver per discipline |
+| **Team** | [teams/backend.md](teams/backend.md), [teams/frontend.md](teams/frontend.md), [teams/qa.md](teams/qa.md), [teams/product-architecture.md](teams/product-architecture.md) | Part B `RELM:TEAM-<TEAM>` — BE-*, FE-*, QA-*, PRD-* | [`presets/relm-<team>/…/constitution-template.md`](https://github.com/spec-kit-relm/speckit-platform/blob/main/governance/README.md) | SDD Guild + the team |
 | **Repository** | [repository-level.md](repository-level.md) (how to write them) | Part C — `ORD-*`, `INV-*`, `WEB-*`, `E2E-*`, `PS-*` + `AGENTS.md` | the repository itself | the owning team (`lane:governance`) |
 
 ```text
