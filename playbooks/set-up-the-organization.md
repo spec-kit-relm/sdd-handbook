@@ -19,8 +19,9 @@ any gate can run:
 
 ```bash
 git clone https://github.com/spec-kit-relm/speckit-platform && cd speckit-platform
-git tag -a v1.1.0 -m "speckit-platform v1.1.0" && git tag -f v1
-git push origin v1.1.0 && git push -f origin v1
+V="v$(cat VERSION)"                       # e.g. v1.1.1
+git tag -a "$V" -m "speckit-platform $V" && git tag -f v1
+git push origin "$V" && git push -f origin v1
 ```
 
 *Verify:* `sdd / sdd-gates` is green on the next commit of any repository.
