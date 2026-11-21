@@ -60,7 +60,9 @@ cd ~/relm/inventory-service
 ```
 
 Promote the draft to `contracts/inventory-api.yaml` (v1.0.0 → **1.1.0**, additive) and
-`contracts/inventory-events.yaml` (→ **1.1.0**). Open a **contract PR** on branch
+`contracts/inventory-events.yaml` (→ **1.1.0**). *(In this org the contracts were later re-released
+as docs-only PATCH versions — inventory-api/inventory-events 1.1.1, orders-api 1.3.1 — when the
+example was renumbered; those are the versions locked today.)* Open a **contract PR** on branch
 `002-stock-reservation-contract`, label `contract-change`, reviewers: orders + web feature owners.
 
 **orders-service** does the same for `orders-api` (1.2.0 → **1.3.0**: optional `reservationId`,
