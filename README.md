@@ -20,7 +20,7 @@ Status: **ratified v1.0** (2026-11-21)
 | 2 | [The AI SDLC](docs/02-ai-sdlc.md) | 20 min | The seven phases, four gates, and who runs which Spec Kit command |
 | 3 | [Work lanes](docs/03-work-lanes.md) | 5 min | When to use the full flow, a local spec, the bugfix lane, or no spec |
 | 4 | [Rules](rules/README.md) | 15 min | Company, team and repository rules, and how they map to the constitution |
-| 5 | [Playbook: cross-repo feature](playbooks/cross-repo-feature.md) | 20 min | Exact commands, step by step, using the worked example `RELM-1` |
+| 5 | [Playbook: cross-repo feature](playbooks/cross-repo-feature.md) | 20 min | Exact commands, step by step, using the worked example `RELM-2` |
 | 6 | Your role's onboarding in [Onboard an engineer](playbooks/onboard-an-engineer.md) | 30 min | Local setup and your first task |
 
 Then keep these at hand: [IDs, branches & traceability](docs/04-ids-branches-traceability.md),

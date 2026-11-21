@@ -5,7 +5,7 @@
 The spec already says what should happen; the code doesn't do it.
 
 1. Create an issue with: expected behavior (quote the spec scenario ID if there is one, e.g.
-   `RELM-1/US2/AS2`), actual behavior, reproduction.
+   `RELM-2/US2/AS2`), actual behavior, reproduction.
 2. Write a **failing regression test first**. Title it with the scenario ID when one exists.
 3. Fix. Optionally use Spec Kit's bundled `bug` extension (`assess → fix → test`) for non-trivial
    bugs: `specify extension add bug`.
