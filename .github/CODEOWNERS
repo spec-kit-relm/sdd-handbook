@@ -1,0 +1,5 @@
+*                 @spec-kit-relm/sdd-guild
+/rules/teams/backend.md   @spec-kit-relm/sdd-guild @spec-kit-relm/backend
+/rules/teams/frontend.md  @spec-kit-relm/sdd-guild @spec-kit-relm/frontend
+/rules/teams/qa.md        @spec-kit-relm/sdd-guild @spec-kit-relm/qa
+/rules/teams/product-architecture.md @spec-kit-relm/sdd-guild @spec-kit-relm/architecture
